@@ -27,17 +27,17 @@ def connection(address, vpngroup, username, password):
     child.expect('  >> state: Connected')
 
 
-def check_state():
+def is_connect():
     global p, lines_nums, inline
-    # Set up the process
     p = Popen("./state.sh", stdout=PIPE, close_fds=True)
-    while True:
-        for lines_nums in xrange(1, 7):
-            inline = p.stdout.readline()
-            if "Disconnected" in inline:
-                notify('Disconnected')
-
-        time.sleep(30)
+    for lines_nums in xrange(1, 7):
+        inline = p.stdout.readline()
+        if "state: Connected" in inline:
+            notify("Connected")
+            return True
+        elif "state: Disconnected" in inline:
+            notify("Disconnected")
+            return False
 
 
 def read_config():
@@ -47,9 +47,12 @@ def read_config():
 
 
 def main():
-    configure = read_config()
-    connection('mel-vpn.realestate.com.au', '1', configure[0], configure[1])
-    # check_state()
+    while True:
+        if not is_connect():
+            configure = read_config()
+            connection('mel-vpn.realestate.com.au', '1', configure[0], configure[1])
+
+        time.sleep(30)
 
 
 if __name__ == '__main__':
