@@ -15,6 +15,7 @@ Bash:
 
 Create file ``.uap`` with
 
+    VPN URL
     USERNAME
     PASSWORD
 

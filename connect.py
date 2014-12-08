@@ -50,7 +50,7 @@ def main():
     while True:
         if not is_connect():
             configure = read_config()
-            connection('mel-vpn.realestate.com.au', '1', configure[0], configure[1])
+            connection(configure[0], '1', configure[1], configure[2])
 
         time.sleep(30)
 
