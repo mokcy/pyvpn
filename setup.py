@@ -42,7 +42,7 @@ for k, v in data_file_dict.items():
 
 setup(
     name = 'cisco_vpn',
-    version = '0.0.1',
+    version = '0.0.2',
     keywords = ('cisco', 'vpn', 'cisco vpn'),
     description = 'Connect Cisco VPN With Python',
     license = 'MIT License',
