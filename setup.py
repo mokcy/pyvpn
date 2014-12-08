@@ -42,10 +42,14 @@ for k, v in data_file_dict.items():
 
 setup(
     name = 'cisco_vpn',
-    version = '0.0.2',
+    version = '0.0.4',
     keywords = ('cisco', 'vpn', 'cisco vpn'),
     description = 'Connect Cisco VPN With Python',
     license = 'MIT License',
+    install_requires=[
+            "docopt",
+            "pexpect",
+        ],
 
     url = 'http://www.phodal.com',
     author = 'Phodal Huang',
@@ -55,7 +59,6 @@ setup(
     data_files=data_file_list,
     include_package_data = True,
     platforms = 'any',
-    install_requires = [],
     scripts=[
         'vpn.py',
     ],

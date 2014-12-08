@@ -4,9 +4,10 @@ import os
 import sys
 import time
 from subprocess import Popen, PIPE
-
+from os.path import expanduser
 import pexpect
 
+home = expanduser("~")
 
 def notify(message):
     os.system("terminal-notifier -sound default -title Cisco VPN '' -message " + message)
@@ -45,7 +46,7 @@ def is_connect():
 
 
 def read_config():
-    text_file = open(".uap", "r")
+    text_file = open(home + "/.uap", "r")
     lines = text_file.read().split('\n')
     return lines
 
