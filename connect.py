@@ -12,6 +12,10 @@ def notify(message):
     os.system("terminal-notifier -sound default -title Cisco VPN '' -message " + message)
 
 
+def disconnect():
+    os.system("/opt/cisco/anyconnect/bin/vpn disconnect")
+
+
 def connection(address, vpngroup, username, password):
     child = pexpect.spawn('/opt/cisco/anyconnect/bin/vpn connect ' + address, maxread=2000)
     child.logfile = sys.stdout
