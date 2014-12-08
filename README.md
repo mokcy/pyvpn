@@ -9,8 +9,21 @@ Bash:
 
 ====
 
-###Dependencies:
+
+
+###Install:
+
+Create file ``.uap`` with
+
+    USERNAME
+    PASSWORD
 
 ``Home-brew``
 
  - terminal-notifier
+ 
+``Python``
+ 
+    sudo pip install -r requirements.txt      
+    
+    
