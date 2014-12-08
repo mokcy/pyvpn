@@ -8,3 +8,9 @@ Bash:
 2. run vpnc.sh to connect
 
 ====
+
+###Dependencies:
+
+``Home-brew``
+
+ - terminal-notifier
