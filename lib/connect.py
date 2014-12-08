@@ -33,7 +33,7 @@ def connection(address, vpngroup, username, password):
 
 def is_connect():
     global p, lines_nums, inline
-    p = Popen("./lib/state.sh", stdout=PIPE, close_fds=True)
+    p = Popen(["/opt/cisco/anyconnect/bin/vpn", "state"], stdout=PIPE, close_fds=True)
     for lines_nums in xrange(1, 7):
         inline = p.stdout.readline()
         if "state: Connected" in inline:

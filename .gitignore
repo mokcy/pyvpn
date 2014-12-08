@@ -2,3 +2,5 @@
 .idea/
 *.pyc
 .uap
+dist/
+cisco_vpn.egg-info/
