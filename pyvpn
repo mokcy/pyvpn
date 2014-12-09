@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """Usage:
-  vpn connect
-  vpn disconnect
+  pyvpn connect
+  pyvpn disconnect
 """
 
 from docopt import docopt

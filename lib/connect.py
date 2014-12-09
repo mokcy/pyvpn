@@ -9,6 +9,7 @@ import pexpect
 
 home = expanduser("~")
 
+
 def notify(message):
     os.system("terminal-notifier -sound default -title Cisco VPN '' -message " + message)
 
@@ -28,7 +29,9 @@ def connection(address, vpngroup, username, password):
     child.logfile = None
     child.sendline(password)
     child.logfile = sys.stdout
-    child.expect('  >> notice: Establishing VPN session...')
+    child.expect('  >> notice: Please respond to banner.')
+    child.delaybeforesend = 1
+    child.sendline('y')
     child.expect('  >> state: Connected')
 
 
