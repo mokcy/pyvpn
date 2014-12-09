@@ -1,30 +1,20 @@
-vpnc
+#pyvpnc
 
 The version of Cisco AnyConnect Secure Mobility Client must be 3.1.05152 or newer.
 
-====
-Bash:
-1. Change USERNAME & PASSWORD in vpnc.sh to your username & password
-2. run vpnc.sh to connect
-
-====
-
-
-
 ###Install:
 
-Create file ``.uap`` with
+1.Install
+
+    sudo pip install cisco-vpn
+
+2.Create file ``.uap`` with
 
     VPN URL
     USERNAME
     PASSWORD
 
-``Home-brew``
+3.Usage
 
- - terminal-notifier
- 
-``Python``
- 
-    sudo pip install -r requirements.txt      
-    
-    
+    pyvpn connect
+    pyvpn disconnect
